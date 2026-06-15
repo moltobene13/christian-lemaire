@@ -204,6 +204,10 @@ nav.site.scrolled .links{color:var(--ink)}
 /* sous-titre de groupe (ex. Mercedes COMO : AMG / Classe G) */
 .group-label{font-family:var(--cond);text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;color:var(--accent);border-top:2px solid var(--ink);padding-top:16px;margin:40px 0 16px}
 .group-label:first-child{margin-top:0}
+.pf-feature{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pf-feature .cell,.pf-grid .cell{aspect-ratio:9/16;flex:none}
+@media(max-width:680px){.pf-feature{grid-template-columns:1fr}.pf-grid{grid-template-columns:1fr 1fr}}
 .empty-note{color:var(--mut);font-style:italic;font-size:15px;padding:6px 0 34px}
 .cat-hero.no-bg{background:linear-gradient(125deg,#1b1916,#3a281f 58%,var(--accent))}
 /* lightbox (clic -> agrandir) */
