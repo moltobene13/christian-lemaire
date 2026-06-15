@@ -110,6 +110,9 @@ nav.site.scrolled .links{color:var(--ink)}
 @media(max-width:860px){.parcours-grid{grid-template-columns:1fr;gap:46px;padding:56px 0 80px}}
 .parcours h4,.side-block h4,.awards h4{font-family:var(--cond);text-transform:uppercase;letter-spacing:.18em;font-size:13px;color:var(--accent);font-weight:700;margin-bottom:26px}
 .awards{margin-top:42px}
+.software-box{margin-top:42px;border:1px solid var(--line);border-radius:3px;padding:22px 26px}
+.software-box h4{margin-bottom:14px}
+.software-box .skill-list li{padding:11px 0;font-size:14.5px}
 .sidecol{position:sticky;top:96px;display:flex;flex-direction:column;gap:40px}
 @media(max-width:860px){.sidecol{position:static}}
 .skill-list{display:flex;flex-direction:column}
