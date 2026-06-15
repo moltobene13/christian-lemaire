@@ -65,7 +65,7 @@ nav.site.scrolled .links{color:var(--ink)}
 .alaune .al-bg{position:absolute;left:0;right:0;top:-12%;height:124%;background-size:cover;background-position:center;transform:translate3d(0,0,0) scale(1.04);will-change:transform}
 @media(prefers-reduced-motion:reduce){.alaune .al-bg{top:0;height:100%;transform:none!important}}
 .alaune .al-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,7,.85),rgba(10,9,7,.5) 52%,rgba(10,9,7,.2))}
-.alaune .al-inner{position:relative;z-index:2;padding:70px 0}
+.alaune .al-inner{position:relative;z-index:2;padding:70px 30px}
 .al-eye{font-family:var(--cond);text-transform:uppercase;letter-spacing:.24em;font-size:13px;font-weight:700;color:var(--accent);filter:brightness(1.45);display:block;margin-bottom:16px}
 .al-title{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,88px);line-height:.96;letter-spacing:-.02em}
 .al-desc{font-size:18px;color:rgba(255,255,255,.88);max-width:46ch;margin-top:18px;line-height:1.5}
