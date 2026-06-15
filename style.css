@@ -210,6 +210,8 @@ nav.site.scrolled .links{color:var(--ink)}
 @media(max-width:680px){.pf-feature{grid-template-columns:1fr}.pf-grid{grid-template-columns:1fr 1fr}}
 /* À la une (Como) : 2 visuels/ligne sur desktop (mosaïque), 1 seul/ligne sur mobile */
 @media(max-width:680px){.featured-wall .jrow{flex-direction:column}.featured-wall .jrow .cell{flex:1 1 auto!important;width:100%}}
+/* cellule mise en avant (reel tennis Fashion, reels Mercedes) : pleine largeur sur mobile */
+@media(max-width:680px){.cat-wall .jrow .cell.feat{flex:1 1 100%!important;width:100%}}
 .empty-note{color:var(--mut);font-style:italic;font-size:15px;padding:6px 0 34px}
 .cat-hero.no-bg{background:linear-gradient(125deg,#1b1916,#3a281f 58%,var(--accent))}
 /* lightbox (clic -> agrandir) */
