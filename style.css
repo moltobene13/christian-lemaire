@@ -221,6 +221,9 @@ nav.site.scrolled .links{color:var(--ink)}
 /* reel PSG en grand : pleine largeur, en tête d'Others */
 .wide-reel{position:relative;margin:0 0 14px;background:var(--noir);border:1px solid var(--line);border-radius:3px;overflow:hidden}
 .wide-reel video{display:block;width:100%;height:auto}
+.solo-wall{display:flex;flex-direction:column;gap:16px}
+.solo-shot{position:relative;width:100%;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#ececec;cursor:pointer}
+.solo-shot img{width:100%;height:auto;display:block}
 .half-reel{position:relative;margin:0 0 16px;width:calc(50% - 7px);background:var(--noir);border:1px solid var(--line);border-radius:3px;overflow:hidden}
 .half-reel video{display:block;width:100%;height:auto}
 .reel-row{display:flex;gap:14px;align-items:stretch;margin:0 0 16px}

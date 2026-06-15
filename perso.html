@@ -105,7 +105,7 @@ function lbClose(){lb.classList.remove('open');lbm.innerHTML='';}
 function lbOpen(html){lbm.innerHTML=html;lb.classList.add('open');}
 lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-close'))lbClose();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
-document.querySelectorAll('.cell:not(.logo-cell)').forEach(function(c){c.classList.add('zoomable');c.addEventListener('click',function(){
+document.querySelectorAll('.cell:not(.logo-cell),.solo-shot').forEach(function(c){c.classList.add('zoomable');c.addEventListener('click',function(){
   var v=c.querySelector('video'),im=c.querySelector('img');
   if(v){lbOpen('<video src="'+v.getAttribute('src')+'" autoplay loop controls playsinline></video>');}
   else if(im){lbOpen('<img src="'+im.getAttribute('src')+'" alt="">');}
