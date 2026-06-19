@@ -24,7 +24,7 @@
       </div>
     </div>
     <a href="index.html#contact">Contact</a>
-    <a class="alaune-link" href="mercedescomo.html">À la une</a>
+    <a class="alaune-link" href="index.html#alaune">À la une</a>
   </div>
   <a class="logo" href="index.html">Christian Lemaire</a>
 </nav>
@@ -140,12 +140,12 @@ document.querySelectorAll('.cell:not(.logo-cell),.solo-shot').forEach(function(c
   else if(im){lbOpen('<img src="'+im.getAttribute('src')+'" alt="">');}
 });});
 // parallaxe : le visuel « R&D Como » (À la une) défile plus lentement que la page
-var plx=document.querySelector('.alaune .al-bg');
-if(plx){var plxSec=plx.parentElement;
-  function parallax(){var r=plxSec.getBoundingClientRect();
+var plxList=[].slice.call(document.querySelectorAll('.alaune .al-bg'));
+if(plxList.length){
+  function parallax(){plxList.forEach(function(plx){var sec=plx.parentElement,r=sec.getBoundingClientRect();
     if(r.bottom<-120||r.top>window.innerHeight+120)return;
     var prog=(r.top+r.height/2-window.innerHeight/2)/window.innerHeight;
-    plx.style.transform='translate3d(0,'+(prog*-64).toFixed(1)+'px,0) scale(1.04)';}
+    plx.style.transform='translate3d(0,'+(prog*-64).toFixed(1)+'px,0) scale(1.04)';});}
   window.addEventListener('scroll',parallax,{passive:true});
   window.addEventListener('resize',parallax);parallax();}
 </script>

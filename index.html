@@ -24,12 +24,12 @@
       </div>
     </div>
     <a href="#contact">Contact</a>
-    <a class="alaune-link" href="mercedescomo.html">À la une</a>
+    <a class="alaune-link" href="#alaune">À la une</a>
   </div>
   <a class="logo" href="index.html">Christian Lemaire</a>
 </nav>
 <header class="cover" id="top">
-  <a class="cover-link" href="mercedescomo.html" aria-label="Découvrir la R&amp;D Como Paris"><video class="bg" src="assets/cover.mp4" poster="assets/cover.jpg" autoplay muted loop playsinline></video><div class="veil"></div></a>
+  <a class="cover-link" href="#alaune" aria-label="Découvrir les R&amp;D à la une"><video class="bg" src="assets/cover.mp4" poster="assets/cover.jpg" autoplay muted loop playsinline></video><div class="veil"></div></a>
   <div class="inner">
     <p class="tag">Art Direction &amp; Brand content</p>
     <h1 class="cover-name">Be creative_<br>Be bold</h1>
@@ -96,16 +96,25 @@
   </div>
 </section>
 
-<a class="alaune reveal" href="mercedescomo.html">
+<div id="alaune"><a class="alaune reveal" href="mercedescomo.html">
   <div class="al-bg" style="background-image:url('assets/como_g/02.jpg')"></div>
   <div class="al-veil"></div>
   <div class="wrap al-inner">
-    <span class="al-eye">À la une &middot; Projet phare</span>
+    <span class="al-eye">À la une &middot; R&amp;D</span>
     <h2 class="al-title">Como Paris</h2>
-    <p class="al-desc">Projet de R&amp;D en image générative pour Mercedes — une narration cinématographique qui transforme la Classe G en icône vivante, entre puissance brute et élégance urbaine.</p>
+    <p class="al-desc">R&amp;D en image générative pour Mercedes — une narration cinématographique qui transforme la Classe G en icône vivante, entre puissance brute et élégance urbaine.</p>
     <span class="al-cta">Découvrir le projet <span class="ar">&rarr;</span></span>
   </div>
-</a>
+</a><a class="alaune reveal" href="harleydavidson.html">
+  <div class="al-bg" style="background-image:url('assets/harley/04.jpg')"></div>
+  <div class="al-veil"></div>
+  <div class="wrap al-inner">
+    <span class="al-eye">À la une &middot; R&amp;D</span>
+    <h2 class="al-title">Harley-Davidson Paris</h2>
+    <p class="al-desc">R&amp;D en image générative pour Harley-Davidson — la Low Rider ST mise en scène dans Paris, entre roulage cinématique, tunnel et key visuals de campagne.</p>
+    <span class="al-cta">Découvrir le projet <span class="ar">&rarr;</span></span>
+  </div>
+</a></div>
 
 <section class="work" id="work">
   <div class="wrap">
@@ -205,12 +214,12 @@ document.querySelectorAll('.cell:not(.logo-cell),.solo-shot').forEach(function(c
   else if(im){lbOpen('<img src="'+im.getAttribute('src')+'" alt="">');}
 });});
 // parallaxe : le visuel « R&D Como » (À la une) défile plus lentement que la page
-var plx=document.querySelector('.alaune .al-bg');
-if(plx){var plxSec=plx.parentElement;
-  function parallax(){var r=plxSec.getBoundingClientRect();
+var plxList=[].slice.call(document.querySelectorAll('.alaune .al-bg'));
+if(plxList.length){
+  function parallax(){plxList.forEach(function(plx){var sec=plx.parentElement,r=sec.getBoundingClientRect();
     if(r.bottom<-120||r.top>window.innerHeight+120)return;
     var prog=(r.top+r.height/2-window.innerHeight/2)/window.innerHeight;
-    plx.style.transform='translate3d(0,'+(prog*-64).toFixed(1)+'px,0) scale(1.04)';}
+    plx.style.transform='translate3d(0,'+(prog*-64).toFixed(1)+'px,0) scale(1.04)';});}
   window.addEventListener('scroll',parallax,{passive:true});
   window.addEventListener('resize',parallax);parallax();}
 </script>
