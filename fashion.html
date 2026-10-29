@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261029">
+<link rel="stylesheet" href="style.css?v=20261029b">
 </head>
 <body>
 <nav class="site" id="nav">
@@ -136,6 +136,38 @@ if(plxList.length){
   window.addEventListener('scroll',parallax,{passive:true});
   window.addEventListener('resize',parallax);parallax();}
 </script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81ebfeb680374405bfd1dd026b7b8972"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81ebfeb680374405bfd1dd026b7b8972"}'></script><!-- End Cloudflare Web Analytics --><script>
+(function(){
+var TXT='Be Creative_Be Bold.',reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* titre de l'accueil : s'écrit comme le logo animé */
+var h=document.getElementById('coverName');
+if(h&&!reduce){
+  var parts=['Be Creative_','Be Bold.'],chars=[];h.setAttribute('aria-label','Be Creative_Be Bold.');h.textContent='';
+  parts.forEach(function(pt,k){if(k)h.appendChild(document.createElement('br'));pt.split('').forEach(function(c){var sp=document.createElement('span');sp.textContent=c;sp.setAttribute('aria-hidden','true');sp.style.opacity='0';h.appendChild(sp);chars.push(sp)})});
+  var started=false;function typeHero(){if(started)return;started=true;chars.forEach(function(sp,i){setTimeout(function(){sp.style.opacity='1'},i*70)})}
+  if(document.documentElement.classList.contains('intro-on'))document.addEventListener('rvintro-end',function(){setTimeout(typeHero,250)});else setTimeout(typeHero,350);
+}
+/* logo en haut à droite : boucle animée, desktop uniquement */
+var a=document.querySelector('nav .logo');
+if(!a||reduce||!matchMedia('(min-width:769px)').matches)return;
+var word=a.querySelector('.lg-word'),R=a.querySelector('.lg-r'),t=document.createElement('span');
+t.className='lg-txt';t.setAttribute('aria-hidden','true');a.appendChild(t);a.classList.add('anim');
+var T=[],running=false;function at(ms,f){T.push(setTimeout(f,ms))}
+function cycle(){
+  at(2200,function(){word.classList.add('off')});
+  at(2400,function(){t.classList.add('on');for(var i=1;i<=TXT.length;i++)(function(i){at(i*55,function(){t.textContent=TXT.slice(0,i)})})(i)});
+  at(4600,function(){t.classList.remove('on')});
+  at(4850,function(){R.classList.add('on')});
+  at(6300,function(){R.classList.remove('on');word.classList.remove('off')});
+  at(6900,function(){t.textContent='';cycle()});
+}
+function start(){if(running)return;running=true;cycle()}
+if(document.querySelector('header.cover')){
+  var go=function(){if(window.scrollY>10)start()};
+  window.addEventListener('scroll',go,{passive:true});
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a,button'))start()},true);
+}else{setTimeout(start,500)}
+})();
+</script>
 </body>
 </html>

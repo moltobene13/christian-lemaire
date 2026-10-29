@@ -306,3 +306,14 @@ footer .ft-txt{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 #intro .in-skip{position:absolute;right:22px;bottom:20px;background:none;border:0;font-family:var(--cond);text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:700;color:var(--mut);cursor:pointer;padding:8px}
 #intro .in-skip:hover{color:var(--noir)}
 @keyframes inIn{from{opacity:0}to{opacity:1}}
+
+/* logo nav animé (desktop) + titre d'accueil tapé */
+nav .logo{position:relative}
+nav .logo .lg-txt{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:0;white-space:nowrap;font-family:var(--sans);font-weight:600;font-size:12px;line-height:1;letter-spacing:-.01em;color:#fff;transition:opacity .25s ease,color .35s ease}
+nav.site.scrolled .logo .lg-txt{color:var(--noir)}
+nav .logo .lg-txt.on{opacity:1}
+nav .logo.anim .lg-word{transition:opacity .3s ease,filter .35s ease}
+nav .logo.anim .lg-word.off{opacity:0}
+nav .logo.anim .lg-r{display:block;position:absolute;left:50%;top:50%;height:30px;transform:translate(-50%,-50%) scale(.85);opacity:0;transition:opacity .3s ease,transform .35s ease,filter .35s ease}
+nav .logo.anim .lg-r.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.cover .cover-name span{transition:opacity .12s ease}
