@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script>try{if(!sessionStorage.getItem('rvIntro')&&!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('intro-on')}catch(e){}</script>
+<div id="intro" role="presentation"><div class="in-stage"><img class="in-word" src="assets/rv-word-black.png" alt=""><div class="in-txt" aria-hidden="true"></div><img class="in-r" src="assets/rv-R-black.png" alt=""></div><div class="in-bar"><i></i></div><button type="button" class="in-skip" id="inSkip">Passer</button></div>
 <nav class="site home" id="nav">
   <div class="links">
     <a href="#about">Profil</a>
@@ -26,7 +28,7 @@
     <a href="#contact">Contact</a>
     <a class="alaune-link" href="#alaune">À la une</a>
   </div>
-  <a class="logo" href="index.html">Christian Lemaire</a>
+  <a class="logo" href="index.html" aria-label="Revival, Christian Lemaire"><img class="lg-word" src="assets/rv-word-black.png" alt="Revival"><img class="lg-r" src="assets/rv-R-black.png" alt="" aria-hidden="true"></a>
 </nav>
 <header class="cover" id="top">
   <a class="cover-link" href="#alaune" aria-label="Découvrir les R&amp;D à la une"><video class="bg" src="assets/cover.mp4" poster="assets/cover.jpg" autoplay muted loop playsinline></video><div class="veil"></div></a>
@@ -175,6 +177,7 @@
   <div class="wrap">
     <span class="eyebrow">Be creative_Be bold</span>
     <h2>Travaillons <em>ensemble.</em></h2>
+    <div class="ct-name">Christian Lemaire</div>
     <div class="lines"><a href="mailto:hellocarbeez@gmail.com">hellocarbeez@gmail.com</a><a href="tel:+33661685841">06 61 68 58 41</a></div>
     <div class="avail">Marseille &mdash; Paris</div>
     <div class="ct-socials">
@@ -186,7 +189,7 @@
     </div>
   </div>
 </section>
-<footer><div class="wrap"><span>&copy; 2026 Christian Lemaire</span><span>Directeur Artistique &amp; Brand Content</span></div></footer>
+<footer><div class="wrap ft"><a class="ft-rv" href="index.html" aria-label="Revival"><img src="assets/revival_loop.gif" width="200" height="46" alt="Revival" loading="lazy"></a><div class="ft-txt"><span>&copy; 2026 Christian Lemaire</span><span>Directeur Artistique &amp; Brand Content</span></div></div></footer>
 <script>
 var nav=document.getElementById('nav');
 function navScroll(){if(window.scrollY>70)nav.classList.add('scrolled');else nav.classList.remove('scrolled');}
@@ -223,6 +226,20 @@ if(plxList.length){
   window.addEventListener('scroll',parallax,{passive:true});
   window.addEventListener('resize',parallax);parallax();}
 </script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81ebfeb680374405bfd1dd026b7b8972"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81ebfeb680374405bfd1dd026b7b8972"}'></script><!-- End Cloudflare Web Analytics --><script>
+(function(){var root=document.documentElement;if(!root.classList.contains('intro-on'))return;
+var el=document.getElementById('intro'),w=el.querySelector('.in-word'),t=el.querySelector('.in-txt'),r=el.querySelector('.in-r'),bar=el.querySelector('.in-bar i');
+var T=[],done=false,TXT='Be Creative_Be Bold.';
+function at(ms,f){T.push(setTimeout(f,ms))}
+function end(){if(done)return;done=true;T.forEach(clearTimeout);try{sessionStorage.setItem('rvIntro','1')}catch(e){}el.classList.add('out');setTimeout(function(){root.classList.remove('intro-on');el.remove()},450)}
+bar.style.transitionDuration='3900ms';requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width='100%'})});
+at(1100,function(){w.classList.add('off')});
+at(1350,function(){t.classList.add('on');for(var i=1;i<=TXT.length;i++)(function(i){at(i*55,function(){t.textContent=TXT.slice(0,i)})})(i)});
+at(2950,function(){t.classList.remove('on')});
+at(3200,function(){r.classList.add('on')});
+at(4000,end);
+el.addEventListener('click',end);document.addEventListener('keydown',function(e){if(e.key==='Escape'||e.key==='Enter'||e.key===' ')end()});
+})();
+</script>
 </body>
 </html>
