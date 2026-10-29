@@ -333,3 +333,12 @@ nav .logo.anim .lg-r.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .lb-count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-family:var(--cond);letter-spacing:.2em;font-size:12px}
 .lightbox.single .lb-nav{display:none}
 @media(max-width:680px){.lb-nav{font-size:46px;padding:8px 10px;opacity:.5}}
+
+/* Perso : raccourcis vers les projets */
+.perso-jump{position:sticky;top:56px;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);margin:0 0 6px;border-bottom:1px solid var(--line)}
+.perso-jump .pj-in{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+.perso-jump .pj-in::-webkit-scrollbar{display:none}
+.perso-jump a{flex:none;font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--ink);border:1px solid var(--ink);padding:7px 13px;white-space:nowrap;transition:background .2s,color .2s}
+.perso-jump a:hover,.perso-jump a.on{background:var(--ink);color:#fff}
+.group-label{scroll-margin-top:130px}
+@media(max-width:680px){.perso-jump{top:52px}.perso-jump a{font-size:11px;padding:6px 11px}.group-label{scroll-margin-top:120px}}
