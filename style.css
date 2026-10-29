@@ -317,3 +317,11 @@ nav .logo.anim .lg-word.off{opacity:0}
 nav .logo.anim .lg-r{display:block;position:absolute;left:50%;top:50%;height:30px;transform:translate(-50%,-50%) scale(.85);opacity:0;transition:opacity .3s ease,transform .35s ease,filter .35s ease}
 nav .logo.anim .lg-r.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .cover .cover-name span{transition:opacity .12s ease}
+
+@media(max-width:680px){.jrow .cell.mfeat{flex:1 1 100%!important}}
+
+/* Home : effet TV léger (lignes + grain animé) */
+.cover .cover-link::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(0,0,0,.16) 0,rgba(0,0,0,.16) 1px,rgba(0,0,0,0) 1px,rgba(0,0,0,0) 3px);mix-blend-mode:multiply;opacity:.55}
+.cover .cover-link::after{content:"";position:absolute;inset:-40px;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:240px 240px;mix-blend-mode:overlay;opacity:.38;animation:tvGrain .7s steps(6) infinite}
+@keyframes tvGrain{0%{transform:translate(0,0)}17%{transform:translate(-31px,17px)}33%{transform:translate(22px,-26px)}50%{transform:translate(-14px,-33px)}67%{transform:translate(35px,12px)}83%{transform:translate(-24px,28px)}100%{transform:translate(0,0)}}
+@media(prefers-reduced-motion:reduce){.cover .cover-link::after{animation:none}}
